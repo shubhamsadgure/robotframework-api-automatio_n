@@ -1,0 +1,37 @@
+# 🔹 Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+
+# 🔹 Virtual Environment
+venv/
+.venv/
+env/
+
+# 🔹 Robot Framework Reports
+reports/
+log/
+output.xml
+log.html
+report.html
+
+# 🔹 IDE (PyCharm)
+.idea/
+*.iml
+
+# 🔹 OS files
+.DS_Store
+Thumbs.db
+
+# 🔹 Test artifacts
+*.tmp
+*.bak
+
+# 🔹 Coverage / cache
+.cache/
+.pytest_cache/
+
+# 🔹 Secrets (if any)
+.env
