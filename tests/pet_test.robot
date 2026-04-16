@@ -2,6 +2,8 @@
 Resource    ../resources/keywords/pet_keywords.robot
 Resource    ../resources/variables/config.robot
 Resource    ../resources/variables/test_data.robot
+Resource    ../resources/keywords/common_keywords.robot
+
 
 *** Test Cases ***
 Verify Create Pet
