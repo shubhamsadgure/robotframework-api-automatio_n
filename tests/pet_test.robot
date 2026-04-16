@@ -4,11 +4,11 @@ Resource    ../resources/variables/config.robot
 Resource    ../resources/variables/test_data.robot
 Resource    ../resources/keywords/common_keywords.robot
 
+Suite Setup    Create API Session
 
 *** Test Cases ***
 Verify Create Pet
     Log To Console    Verifying Create Pet API
-    Create API Session
 
 
     ${body}=    Create Dynamic Pet Body
@@ -20,7 +20,10 @@ Verify Create Pet
     ${id_created}=       Set Variable    ${res_json['id']}
     
     Set Suite Variable    ${id_created}
-     
+
+    Log To Console    ${response.status_code}
+    Log To Console    ${response.json()}
+
     Should Be Equal As Numbers    ${res_json['id']}    ${body['id']}
     Should Be Equal    ${res_json['name']}    ${body['name']}
     Should Be Equal    ${res_json['status']}    ${body['status']}
@@ -33,7 +36,6 @@ Verify Create Pet
 
 Verify Get Pet By ID
     Log To Console    Verifying Get Pet by ID API
-    Create API Session
 
     ${id}=    Set Variable    ${id_created}
 
@@ -47,7 +49,6 @@ Verify Get Pet By ID
 
 Verify Update Pet By ID
     Log To Console    Verifying Update Pet by ID API
-    Create API Session
 
     ${id}=    Set Variable    ${id_created}
 
