@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.3 on win32)" generated="2026-04-16T10:59:24.577022" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="C:\Users\shubham.sadgure1\PycharmProjects\API_Automation\tests">
+<suite id="s1-s1" name="Pet Test" source="C:\Users\shubham.sadgure1\PycharmProjects\API_Automation\tests\pet_test.robot">
+<test id="s1-s1-t1" name="Verify Create Pet" line="7">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Verifying Create Pet API</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-16T10:59:25.913110" elapsed="0.000656"/>
+</kw>
+<kw name="Create API Session" owner="common_keywords">
+<kw name="Create Session" owner="RequestsLibrary">
+<arg>mysession</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-04-16T10:59:25.914727" elapsed="0.000238"/>
+</kw>
+<status status="PASS" start="2026-04-16T10:59:25.914441" elapsed="0.000589"/>
+</kw>
+<kw name="Create Dynamic Pet Body" owner="test_data">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${id}</var>
+<arg>random.randint(1000, 9999)</arg>
+<arg>modules=random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-04-16T10:59:25.916046" elapsed="0.000381"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<var>${name}</var>
+<arg>6</arg>
+<arg>[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2026-04-16T10:59:25.916528" elapsed="0.000183"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<var>${tag}</var>
+<arg>5</arg>
+<arg>[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2026-04-16T10:59:25.916789" elapsed="0.000105"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<var>${photo}</var>
+<arg>4</arg>
+<arg>[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2026-04-16T10:59:25.916968" elapsed="0.000099"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<var>${photo_list}</var>
+<arg>${photo}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2026-04-16T10:59:25.917134" elapsed="0.000176"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tag_obj}</var>
+<arg>id=0</arg>
+<arg>name=${tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-04-16T10:59:25.917390" elapsed="0.000292"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<var>${tags}</var>
+<arg>${tag_obj}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2026-04-16T10:59:25.917756" elapsed="0.000163"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${category}</var>
+<arg>id=0</arg>
+<arg>name=${tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-04-16T10:59:25.917998" elapsed="0.000193"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${body}</var>
+<arg>id=${id}</arg>
+<arg>name=${name}</arg>
+<arg>photoUrls=${photo_list}</arg>
+<arg>status=available</arg>
+<arg>category=${category}</arg>
+<arg>tags=${tags}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-04-16T10:59:25.918269" elapsed="0.000299"/>
+</kw>
+<return>
+<value>${body}</value>
+<status status="PASS" start="2026-04-16T10:59:25.918620" elapsed="0.000043"/>
+</return>
+<var>${body}</var>
+<status status="PASS" start="2026-04-16T10:59:25.915729" elapsed="0.003029"/>
+</kw>
+<kw name="Create Pet" owner="pet_keywords">
+<kw name="Post Request pet" owner="common_keywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${headers}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-04-16T10:59:25.919718" elapsed="0.000191"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>${endpoint}</arg>
+<arg>json=${body}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-04-16T10:59:25.919989" elapsed="1.439179"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="PASS" start="2026-04-16T10:59:27.359395" elapsed="0.000146"/>
+</return>
+<var>${response}</var>
+<arg>${PET}</arg>
+<arg>${body}</arg>
+<status status="PASS" start="2026-04-16T10:59:25.919548" elapsed="1.440337"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="PASS" start="2026-04-16T10:59:27.360013" elapsed="0.000070"/>
+</return>
+<var>${response}</var>
+<arg>${body}</arg>
+<status status="PASS" start="2026-04-16T10:59:25.919339" elapsed="1.440993"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2026-04-16T10:59:27.361087" elapsed="0.001615"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${res_json}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-04-16T10:59:27.363310" elapsed="0.001456"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${id_created}</var>
+<arg>${res_json['id']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-04-16T10:59:27.365422" elapsed="0.000539"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${id_created}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-04-16T10:59:27.366247" elapsed="0.000258"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<arg>${res_json['id']}</arg>
+<arg>${body['id']}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2026-04-16T10:59:27.366846" elapsed="0.000568"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${res_json['name']}</arg>
+<arg>${body['name']}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-04-16T10:59:27.368101" elapsed="0.000954"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${res_json['status']}</arg>
+<arg>${body['status']}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-04-16T10:59:27.369456" elapsed="0.001011"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<arg>${res_json['category']['id']}</arg>
+<arg>${body['category']['id']}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2026-04-16T10:59:27.370936" elapsed="0.000699"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${res_json['category']['name']}</arg>
+<arg>${body['category']['name']}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-04-16T10:59:27.372028" elapsed="0.000884"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${res_json['photoUrls']}</arg>
+<arg>${body['photoUrls']}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-04-16T10:59:27.373674" elapsed="0.001023"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<arg>${res_json['tags'][0]['id']}</arg>
+<arg>${body['tags'][0]['id']}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2026-04-16T10:59:27.375087" elapsed="0.000622"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${res_json['tags'][0]['name']}</arg>
+<arg>${body['tags'][0]['name']}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-04-16T10:59:27.375970" elapsed="0.000598"/>
+</kw>
+<status status="PASS" start="2026-04-16T10:59:25.912173" elapsed="1.464720"/>
+</test>
+<test id="s1-s1-t2" name="Verify Get Pet By ID" line="32">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Verifying Get Pet by ID API</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-16T10:59:27.378155" elapsed="0.001293"/>
+</kw>
+<kw name="Create API Session" owner="common_keywords">
+<kw name="Create Session" owner="RequestsLibrary">
+<arg>mysession</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-04-16T10:59:27.380369" elapsed="0.000354"/>
+</kw>
+<status status="PASS" start="2026-04-16T10:59:27.380001" elapsed="0.000821"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${id}</var>
+<arg>${id_created}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-04-16T10:59:27.381279" elapsed="0.000338"/>
+</kw>
+<kw name="Get Pet By ID" owner="pet_keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${endpoint}</var>
+<arg>/pet/${id}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-04-16T10:59:27.382584" elapsed="0.000413"/>
+</kw>
+<kw name="Get Request Pet" owner="common_keywords">
+<kw name="GET On Session" owner="RequestsLibrary">
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>${endpoint}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-04-16T10:59:27.383555" elapsed="1.206847"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="PASS" start="2026-04-16T10:59:28.590579" elapsed="0.000089"/>
+</return>
+<var>${response}</var>
+<arg>${endpoint}</arg>
+<status status="PASS" start="2026-04-16T10:59:27.383236" elapsed="1.207694"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="PASS" start="2026-04-16T10:59:28.591025" elapsed="0.000054"/>
+</return>
+<var>${response}</var>
+<arg>${id}</arg>
+<status status="PASS" start="2026-04-16T10:59:27.382211" elapsed="1.209066"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-16T10:59:28.592227" elapsed="0.001936"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-16T10:59:28.594779" elapsed="0.001141"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2026-04-16T10:59:28.596373" elapsed="0.000717"/>
+</kw>
+<status status="PASS" start="2026-04-16T10:59:27.377339" elapsed="1.220206"/>
+</test>
+<test id="s1-s1-t3" name="Verify Update Pet By ID" line="46">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Verifying Update Pet by ID API</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-16T10:59:28.599431" elapsed="0.000640"/>
+</kw>
+<kw name="Create API Session" owner="common_keywords">
+<kw name="Create Session" owner="RequestsLibrary">
+<arg>mysession</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-04-16T10:59:28.600827" elapsed="0.000290"/>
+</kw>
+<status status="PASS" start="2026-04-16T10:59:28.600544" elapsed="0.000655"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${id}</var>
+<arg>${id_created}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-04-16T10:59:28.601735" elapsed="0.000600"/>
+</kw>
+<kw name="Create Dynamic Update Pet Body" owner="test_data">
+<kw name="Generate Random String" owner="String">
+<var>${name}</var>
+<arg>6</arg>
+<arg>[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2026-04-16T10:59:28.603089" elapsed="0.000197"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<var>${tag}</var>
+<arg>5</arg>
+<arg>[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2026-04-16T10:59:28.603404" elapsed="0.000154"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<var>${photo}</var>
+<arg>4</arg>
+<arg>[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2026-04-16T10:59:28.603658" elapsed="0.000132"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<var>${photo_list}</var>
+<arg>${photo}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2026-04-16T10:59:28.603884" elapsed="0.000256"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${tag_obj}</var>
+<arg>id=0</arg>
+<arg>name=${tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-04-16T10:59:28.604248" elapsed="0.000297"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<var>${tags}</var>
+<arg>${tag_obj}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2026-04-16T10:59:28.604642" elapsed="0.000195"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${category}</var>
+<arg>id=0</arg>
+<arg>name=${tag}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-04-16T10:59:28.604925" elapsed="0.000228"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${body}</var>
+<arg>id=${id}</arg>
+<arg>name=${name}</arg>
+<arg>photoUrls=${photo_list}</arg>
+<arg>status=updated</arg>
+<arg>category=${category}</arg>
+<arg>tags=${tags}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-04-16T10:59:28.605236" elapsed="0.000310"/>
+</kw>
+<return>
+<value>${body}</value>
+<status status="PASS" start="2026-04-16T10:59:28.605598" elapsed="0.000036"/>
+</return>
+<var>${update_body}</var>
+<arg>${id}</arg>
+<status status="PASS" start="2026-04-16T10:59:28.602791" elapsed="0.002952"/>
+</kw>
+<kw name="Update Pet" owner="pet_keywords">
+<kw name="Put Request Pet" owner="common_keywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<var>${headers}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-04-16T10:59:28.606954" elapsed="0.000448"/>
+</kw>
+<kw name="PUT On Session" owner="RequestsLibrary">
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/pet</arg>
+<arg>json=${body}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-04-16T10:59:28.607571" elapsed="1.310217"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="PASS" start="2026-04-16T10:59:29.917883" elapsed="0.000044"/>
+</return>
+<var>${response}</var>
+<arg>${body}</arg>
+<status status="PASS" start="2026-04-16T10:59:28.606631" elapsed="1.311418"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="PASS" start="2026-04-16T10:59:29.918086" elapsed="0.000020"/>
+</return>
+<var>${response}</var>
+<arg>${update_body}</arg>
+<status status="PASS" start="2026-04-16T10:59:28.606240" elapsed="1.311943"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-16T10:59:29.918481" elapsed="0.000637"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-16T10:59:29.919322" elapsed="0.000602"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2026-04-16T10:59:29.920120" elapsed="0.000402"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${json}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-04-16T10:59:29.920901" elapsed="0.000813"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<arg>${json['id']}</arg>
+<arg>${update_body['id']}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2026-04-16T10:59:29.922485" elapsed="0.001104"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${json['name']}</arg>
+<arg>${update_body['name']}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-04-16T10:59:29.924077" elapsed="0.001091"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${json['status']}</arg>
+<arg>${update_body['status']}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-04-16T10:59:29.925648" elapsed="0.000878"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<arg>${json['category']['id']}</arg>
+<arg>${update_body['category']['id']}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2026-04-16T10:59:29.926768" elapsed="0.000486"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${json['category']['name']}</arg>
+<arg>${update_body['category']['name']}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-04-16T10:59:29.927665" elapsed="0.000971"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${json['photoUrls']}</arg>
+<arg>${update_body['photoUrls']}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-04-16T10:59:29.929098" elapsed="0.001065"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<arg>${json['tags'][0]['id']}</arg>
+<arg>${update_body['tags'][0]['id']}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2026-04-16T10:59:29.930588" elapsed="0.000890"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${json['tags'][0]['name']}</arg>
+<arg>${update_body['tags'][0]['name']}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-04-16T10:59:29.932196" elapsed="0.001105"/>
+</kw>
+<status status="PASS" start="2026-04-16T10:59:28.598702" elapsed="1.335227"/>
+</test>
+<test id="s1-s1-t4" name="Verify Delete Pet By ID" line="77">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Verifying Delete Pet API</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-16T10:59:29.934981" elapsed="0.000311"/>
+</kw>
+<kw name="Delete Pet By ID" owner="pet_keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${endpoint}</var>
+<arg>/pet/${id}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-04-16T10:59:29.935768" elapsed="0.000218"/>
+</kw>
+<kw name="Delete Request Pet" owner="common_keywords">
+<kw name="DELETE On Session" owner="RequestsLibrary">
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>${endpoint}</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-04-16T10:59:29.936262" elapsed="1.213142"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="PASS" start="2026-04-16T10:59:31.149532" elapsed="0.000047"/>
+</return>
+<var>${response}</var>
+<arg>${endpoint}</arg>
+<status status="PASS" start="2026-04-16T10:59:29.936089" elapsed="1.213620"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="PASS" start="2026-04-16T10:59:31.149752" elapsed="0.000020"/>
+</return>
+<var>${response}</var>
+<arg>${id_created}</arg>
+<status status="PASS" start="2026-04-16T10:59:29.935547" elapsed="1.214306"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${json}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-04-16T10:59:31.150363" elapsed="0.000501"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-16T10:59:31.151295" elapsed="0.000620"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-16T10:59:31.152288" elapsed="0.000960"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2026-04-16T10:59:31.153721" elapsed="0.000411"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${id_str}</var>
+<arg>${id_created}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2026-04-16T10:59:31.154517" elapsed="0.000233"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${json['message']}</arg>
+<arg>${id_str}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-04-16T10:59:31.155089" elapsed="0.000427"/>
+</kw>
+<status status="PASS" start="2026-04-16T10:59:29.934359" elapsed="1.221593"/>
+</test>
+<status status="PASS" start="2026-04-16T10:59:24.683542" elapsed="6.473688"/>
+</suite>
+<status status="PASS" start="2026-04-16T10:59:24.580844" elapsed="6.577715"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Tests" id="s1" pass="4" fail="0" skip="0">Tests</stat>
+<stat name="Pet Test" id="s1-s1" pass="4" fail="0" skip="0">Tests.Pet Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
