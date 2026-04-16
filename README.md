@@ -9,32 +9,39 @@ It follows **enterprise (MNC-level) structure** with:
 - Dynamic test data
 - Full CRUD operations
 
+## 🧪 API Test Coverage
+
+This framework covers end-to-end CRUD operations for PetStore APIs:
+
+- Create Pet (POST)
+- Get Pet by ID (GET)
+- Update Pet (PUT)
+- Delete Pet (DELETE)
+
 ---
 
-##  Project Structure
 API_AUTOMATION_FRAMEWORK/
-│
-├── tests/ # Test cases
-│ └── pet_test.robot
-│
-├── resources/
-│ ├── keywords/ # Business & common keywords
-│ │ ├── common_keywords.robot
-│ │ └── pet_keywords.robot
-│ │
-│ ├── variables/ # Config & test data
-│ ├── config.robot
-│ └── test_data.robot
-│ 
-│
-│
-├── reports/ # Execution reports
-│
-├── requirements.txt
-└── README.md
+## 📁 Project Structure
 
+- API_AUTOMATION_FRAMEWORK/
+  - tests/
+    - pet_test.robot  _(Test cases)_
+  
+  - resources/
+    - keywords/  _(Business & common keywords)_
+      - common_keywords.robot
+      - pet_keywords.robot
 
+    - variables/  _(Config & test data)_
+      - config.robot
+      - test_data.robot
 
+  - reports/  _(Execution reports)_
+
+  - requirements.txt  
+  - README.md
+
+  
 ---
 
 ##  Technologies Used
