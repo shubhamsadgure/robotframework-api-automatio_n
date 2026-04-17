@@ -3,7 +3,7 @@
 ##  Overview
 This project is an **API Automation Framework** built using **Robot Framework** for testing the PetStore APIs.
 
-It follows **enterprise (MNC-level) structure** with:
+It follows **enterprise structure** with:
 - Reusable keywords
 - Clean test cases
 - Dynamic test data
